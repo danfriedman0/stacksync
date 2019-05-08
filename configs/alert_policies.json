@@ -1,29 +1,33 @@
 {
-  "combiner": "OR",
-  "conditions": [
+  "alertPolicies": [
     {
-      "conditionThreshold": {
-        "aggregations": [
-          {
-            "alignmentPeriod": "60s",
-            "perSeriesAligner": "ALIGN_RATE"
-          }
-        ],
-        "comparison": "COMPARISON_GT",
-        "duration": "60s",
-        "filter": "metric.type=\"appengine.googleapis.com/http/server/response_count\" resource.type=\"gae_app\" metric.label.\"response_code\">=\"300\"",
-        "thresholdValue": 100,
-        "trigger": {
-          "count": 1
+      "combiner": "OR",
+      "conditions": [
+        {
+          "conditionThreshold": {
+            "aggregations": [
+              {
+                "alignmentPeriod": "60s",
+                "perSeriesAligner": "ALIGN_RATE"
+              }
+            ],
+            "comparison": "COMPARISON_GT",
+            "duration": "60s",
+            "filter": "metric.type=\"appengine.googleapis.com/http/server/response_count\" resource.type=\"gae_app\" metric.label.\"response_code\">=\"300\"",
+            "thresholdValue": 100,
+            "trigger": {
+              "count": 1
+            }
+          },
+          "displayName": "GAE Application - Response count (filtered)"
         }
-      },
-      "displayName": "GAE Application - Response count (filtered)"
+      ],
+      "displayName": "Non-200 responses too high",
+      "enabled": true,
+      "incidentStrategy": {},
+      "notificationChannels": [
+        "projects/stacksync/notificationChannels/5226117608650639874"
+      ]
     }
-  ],
-  "displayName": "Non-200 responses too high",
-  "enabled": true,
-  "incidentStrategy": {},
-  "notificationChannels": [
-    "projects/stacksync/notificationChannels/5226117608650639874"
   ]
 }
