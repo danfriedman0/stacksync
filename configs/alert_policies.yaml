@@ -1,0 +1,26 @@
+alertPolicies:
+    - name: projects/stacksync/alertPolicies/8939280658919864902
+      displayName: 'Email Dan'
+      combiner: OR
+      creationRecord:
+        mutateTime: '2019-05-08T19:47:47.877109127Z'
+        mutatedBy: danfriedman@google.com
+      mutationRecord:
+        mutateTime: '2019-05-08T19:47:47.877109127Z'
+        mutatedBy: danfriedman@google.com
+      conditions:
+        - conditionThreshold:
+            filter: 'metric.type="appengine.googleapis.com/http/server/response_count" resource.type="gae_app" metric.label."response_code">="300"'
+            comparison: COMPARISON_GT
+            thresholdValue: 100
+            duration: 60s
+            trigger:
+              count: 1,
+            aggregations:
+              - alignmentPeriod: 60s
+                perSeriesAligner: ALIGN_RATE
+          displayName: 'GAE Application - Response count (filtered)'
+          name: projects/stacksync/alertPolicies/8939280658919864902/conditions/8939280658919865029
+      notificationChannels:
+        - projects/stacksync/notificationChannels/5226117608650639874
+      enabled: false
