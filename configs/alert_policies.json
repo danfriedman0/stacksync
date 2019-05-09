@@ -34,7 +34,6 @@
       ],
       "displayName": "Non-200 responses too high",
       "enabled": true,
-      "incidentStrategy": {},
       "notificationChannels": [
         "danfriedman@google.com"
       ]
