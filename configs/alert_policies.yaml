@@ -1,6 +1,12 @@
+notificationChannels:
+    - type: "email"
+      enabled: true
+      displayName: "danfriedman@google.com"
+      labels:
+          - email_address: "danfriedman@google.com"
+
 alertPolicies:
-    - name: projects/stacksync/alertPolicies/8939280658919864902
-      displayName: 'Non-200 responses too high'
+    - displayName: 'Non-200 responses too high'
       combiner: OR
       conditions:
         - conditionThreshold:
@@ -14,7 +20,6 @@ alertPolicies:
               - alignmentPeriod: 60s
                 perSeriesAligner: ALIGN_RATE
           displayName: 'GAE Application - Response count (filtered)'
-          name: projects/stacksync/alertPolicies/8939280658919864902/conditions/8939280658919865029
       notificationChannels:
-        - projects/stacksync/notificationChannels/5226117608650639874
+        - "danfriedman@google.com"
       enabled: false
