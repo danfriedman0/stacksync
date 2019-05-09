@@ -1,4 +1,14 @@
 {
+  "notificationChannels": [
+    {
+      "type": "email",
+      "enabled": true,
+      "displayName": "danfriedman@google.com",
+      "labels": {
+        "email_address": "danfriedman@google.com"
+      }
+    }
+  ],
   "alertPolicies": [
     {
       "combiner": "OR",
@@ -26,7 +36,7 @@
       "enabled": true,
       "incidentStrategy": {},
       "notificationChannels": [
-        "projects/stacksync/notificationChannels/5226117608650639874"
+        "danfriedman@google.com"
       ]
     }
   ]
