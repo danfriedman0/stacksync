@@ -3,7 +3,7 @@ notificationChannels:
       enabled: true
       displayName: "danfriedman@google.com"
       labels:
-          - email_address: "danfriedman@google.com"
+          email_address: "danfriedman@google.com"
 
 alertPolicies:
     - displayName: 'Non-200 responses too high'
