@@ -35,7 +35,7 @@ alertPolicies:
       combiner: OR
       conditions:
         - conditionThreshold:
-            filter: 'metric.type="appengine.googleapis.com/http/server/response_count" resource.type=gae_app metric.label.response_code!=starts_with(2)'
+            filter: 'metric.type="appengine.googleapis.com/http/server/response_count" resource.type=gae_app metric.label.response_code>=300'
             comparison: COMPARISON_GT
             thresholdValue: 100
             duration: 60s
