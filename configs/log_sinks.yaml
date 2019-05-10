@@ -1,5 +1,5 @@
 logSinks:
-  - name: "audit_log_sink"
+  - name: "audit_log_sink2"
     destination: "storage.googleapis.com/stacksync"
     filter: "logName:\"cloudaudit.googleapis.com\""
     output_version_format: V2
