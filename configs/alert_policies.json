@@ -2,7 +2,7 @@
   "notificationChannels": [
     {
       "type": "email",
-      "enabled": true,
+      "enabled": false,
       "displayName": "danfriedman@google.com",
       "labels": {
         "email_address": "danfriedman@google.com"
@@ -33,7 +33,7 @@
         }
       ],
       "displayName": "Non-200 responses too high",
-      "enabled": true,
+      "enabled": false,
       "notificationChannels": [
         "danfriedman@google.com"
       ]
