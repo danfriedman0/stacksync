@@ -104,3 +104,47 @@ alertPolicies:
       notificationChannels:
         - "Keith"
       enabled: false
+    - displayName: 'Secret BitCoin Mining'
+      combiner: OR
+      conditions:
+        - conditionThreshold:
+            filter: 'resource.type=api resource.labels.method="BitCoin.Mine" metric.type="serviceruntime.googleapis.com/api/request_count"'
+            comparison: COMPARISON_GT
+            thresholdValue: 1
+            duration: 60s
+            trigger:
+              count: 1
+            aggregations:
+              - alignmentPeriod: 3600s
+                perSeriesAligner: ALIGN_DELTA
+          displayName: 'Mine happened once'
+        - conditionThreshold:
+            filter: 'resource.type=api resource.labels.method="BitCoin.Transact" metric.type="serviceruntime.googleapis.com/api/request_count"'
+            comparison: COMPARISON_GT
+            thresholdValue: 2
+            duration: 60s
+            trigger:
+              count: 1
+            aggregations:
+              - alignmentPeriod: 3600s
+                perSeriesAligner: ALIGN_RATE
+          displayName: 'Transact happened twice'
+      notificationChannels:
+        - "Abhay"
+      enabled: false
+    - displayName: 'CloudSQL is down'
+      combiner: OR
+      conditions:
+        - conditionAbsent:
+            filter: 'resource.type=cloudsql_database metric.type="cloudsql.googleapis.com/database/up"'
+            duration: 3600s
+            trigger:
+              count: 1
+            aggregations:
+              - alignmentPeriod: 60s
+                perSeriesAligner: ALIGN_NEXT_OLDER
+                crossSeriesReducer: REDUCE_COUNT
+          displayName: 'database is not up'
+      notificationChannels:
+        - "Sir Mix-a-Lot"
+      enabled: false

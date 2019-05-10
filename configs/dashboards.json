@@ -26,7 +26,7 @@
           "columns": "2"
         }
       },
-      "displayName": "Demo Dashboard",
+      "displayName": "App Engine Dashboard",
       "revision": "1"
     },
     {
@@ -53,13 +53,151 @@
                 "label": "y1Axis"
               }
               },
-              "title": "GAE Application - Response count"
+              "title": "KaibaCorp"
+            },
+            {
+              "xyChart": {
+                "dataSets": [
+                  {
+                    "timeSeriesFilter": {
+                      "filter": "resource.type=api resource.labels.service=phone.googleapis.com metric.type=\"serviceruntime.googleapis.com/api/request_count\" metric.labels.response_code>=300",
+                      "minAlignmentPeriod": "3600s",
+                      "perSeriesAligner": "ALIGN_RATE",
+                      "crossSeriesReducer": "REDUCE_SUM",
+                      "groupByFields": ["resource.labels.method"],
+                      "unitOverride": "1"
+                    }
+                  }
+                ],
+                "timeshiftDuration": "0s",
+                "options": {},
+                "y1Axis": {
+                "label": "y1Axis"
+              }
+              },
+              "title": "SkyNet"
+            },
+            {
+              "xyChart": {
+                "dataSets": [
+                  {
+                    "timeSeriesFilter": {
+                      "filter": "resource.type=api resource.labels.service=bitcoin.googleapis.com metric.type=\"serviceruntime.googleapis.com/api/request_count\" metric.labels.response_code>=300",
+                      "minAlignmentPeriod": "3600s",
+                      "perSeriesAligner": "ALIGN_RATE",
+                      "crossSeriesReducer": "REDUCE_SUM",
+                      "groupByFields": ["resource.labels.method"],
+                      "unitOverride": "1"
+                    }
+                  }
+                ],
+                "timeshiftDuration": "0s",
+                "options": {},
+                "y1Axis": {
+                "label": "y1Axis"
+              }
+              },
+              "title": "BitCoin"
             }
           ],
           "columns": "2"
         }
       },
-      "displayName": "KaibaCorp DuelTek",
+      "displayName": "All Services",
+      "revision": "1"
+    },
+    {
+      "root": {
+        "gridLayout": {
+          "widgets": [
+            {
+              "xyChart": {
+                "dataSets": [
+                  {
+                    "timeSeriesFilter": {
+                      "filter": "resource.type=cloudsql_database metric.type=\"cloudsql.googleapis.com/database/up\"",
+                      "minAlignmentPeriod": "60s",
+                      "perSeriesAligner": "ALIGN_NEXT_OLDER",
+                      "unitOverride": "1"
+                    }
+                  }
+                ],
+                "timeshiftDuration": "0s",
+                "options": {},
+                "y1Axis": {
+                "label": "y1Axis"
+              }
+              },
+              "title": "Up"
+            },
+            {
+              "xyChart": {
+                "dataSets": [
+                  {
+                    "timeSeriesFilter": {
+                      "filter": "resource.type=cloudsql_database metric.type=\"cloudsql.googleapis.com/database/memory/usage\"",
+                      "minAlignmentPeriod": "3600s",
+                      "perSeriesAligner": "ALIGN_NEXT_OLDER",
+                      "crossSeriesReducer": "REDUCE_SUM",
+                      "unitOverride": "1"
+                    }
+                  }
+                ],
+                "timeshiftDuration": "0s",
+                "options": {},
+                "y1Axis": {
+                "label": "y1Axis"
+              }
+              },
+              "title": "Thinking"
+            },
+            {
+              "xyChart": {
+                "dataSets": [
+                  {
+                    "timeSeriesFilter": {
+                      "filter": "resource.type=cloudsql_database metric.type=\"cloudsql.googleapis.com/database/cpu/utilization\"",
+                      "minAlignmentPeriod": "3600s",
+                      "perSeriesAligner": "ALIGN_NEXT_OLDER",
+                      "crossSeriesReducer": "REDUCE_SUM",
+                      "unitOverride": "1"
+                    }
+                  }
+                ],
+                "timeshiftDuration": "0s",
+                "options": {},
+                "y1Axis": {
+                "label": "y1Axis"
+              }
+              },
+              "title": "Eating"
+            },
+            {
+              "xyChart": {
+                "dataSets": [
+                  {
+                    "timeSeriesFilter": {
+                      "filter": "resource.type=cloudsql_database metric.type=\"cloudsql.googleapis.com/database/disk/quota\"",
+                      "minAlignmentPeriod": "7200s",
+                      "perSeriesAligner": "ALIGN_NEXT_OLDER",
+                      "crossSeriesReducer": "REDUCE_SUM",
+                      "unitOverride": "1"
+                    }
+                  }
+                ],
+                "timeshiftDuration": "0s",
+                "options": {},
+                "y1Axis": {
+                "label": "y1Axis"
+              }
+              },
+              "title": "Too Full"
+            }
+          ],
+          "columns": "2"
+        }
+      },
+      "displayName": "Baby's First CloudSQL",
       "revision": "1"
     }
   ]
