@@ -1,9 +1,34 @@
 notificationChannels:
     - type: "email"
-      enabled: true
-      displayName: "danfriedman@google.com"
+      enabled: false
+      displayName: "Dan"
       labels:
           email_address: "danfriedman@google.com"
+    - type: "sms"
+      enabled: false
+      displayName: "Jenny"
+      labels:
+          number: "212-867-5309"
+    - type: "email"
+      enabled: false
+      displayName: "Syed"
+      labels:
+          email_address: "ashrafulla@google.com"
+    - type: "email"
+      enabled: false
+      displayName: "Keith"
+      labels:
+          email_address: "kjordy@google.com"
+    - type: "email"
+      enabled: false
+      displayName: "Abhay"
+      labels:
+          email_address: "akm@google.com"
+    - type: "sms"
+      enabled: false
+      displayName: "Sir Mix-A-Lot"
+      labels:
+          number: "1-800-649-2568"
 
 alertPolicies:
     - displayName: 'Non-200 responses too high'
@@ -21,5 +46,33 @@ alertPolicies:
                 perSeriesAligner: ALIGN_RATE
           displayName: 'GAE Application - Response count (filtered)'
       notificationChannels:
-        - "danfriedman@google.com"
+        - "Dan"
+      enabled: false
+    - displayName: 'KaibaCorp DuelTek not responding'
+      combiner: OR
+      conditions:
+        - conditionThreshold:
+            filter: 'resource.type=api resource.labels.service="kaibacorp.googleapis.com" resource.labels.method=DuelTek.GetCard metric.type="serviceruntime.googleapis.com/api/request_count" metric.label."response_code">="300"'
+            comparison: COMPARISON_GT
+            thresholdValue: 1
+            duration: 60s
+            trigger:
+              count: 1
+            aggregations:
+              - alignmentPeriod: 3600s
+                perSeriesAligner: ALIGN_RATE
+          displayName: 'GetCard not responding'
+        - conditionThreshold:
+            filter: 'resource.type=api resource.labels.service=kaibacorp.googleapis.com resource.labels.method=DuelTek.CreateCard metric.type="serviceruntime.googleapis.com/api/request_count" metric.label.response_code>=300'
+            comparison: COMPARISON_GT
+            thresholdValue: 1
+            duration: 60s
+            trigger:
+              count: 1
+            aggregations:
+              - alignmentPeriod: 3600s
+                perSeriesAligner: ALIGN_RATE
+          displayName: 'CreateCard not responding'
+      notificationChannels:
+        - "Dan"
       enabled: false
