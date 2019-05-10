@@ -3,7 +3,3 @@ logSinks:
     destination: "storage.googleapis.com/stacksync"
     filter: "logName:\"cloudaudit.googleapis.com\""
     output_version_format: V2
-  - name: "request_log_sink"
-    destination: "storage.googleapis.com/appengine"
-    filter: "logname:\"projects/stacksync/logs/appengine.googleapis.com%2Frequest_log\""
-    output_version_format: V2
