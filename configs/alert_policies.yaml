@@ -47,7 +47,7 @@ alertPolicies:
           displayName: 'GAE Application - Response count (filtered)'
       notificationChannels:
         - 'Dan'
-      enabled: false
+      enabled: true
     - displayName: 'KaibaCorp DuelTek not responding'
       combiner: OR
       conditions:
@@ -75,7 +75,7 @@ alertPolicies:
           displayName: 'CreateCard not responding'
       notificationChannels:
         - 'Syed'
-      enabled: false
+      enabled: true
     - displayName: 'Phone Apocalypse'
       combiner: OR
       conditions:
@@ -103,7 +103,7 @@ alertPolicies:
           displayName: 'HangUp not responding'
       notificationChannels:
         - "Keith"
-      enabled: false
+      enabled: true
     - displayName: 'Secret BitCoin Mining'
       combiner: OR
       conditions:
@@ -131,7 +131,7 @@ alertPolicies:
           displayName: 'Transact happened twice'
       notificationChannels:
         - "Abhay"
-      enabled: false
+      enabled: true
     - displayName: 'CloudSQL is down'
       combiner: OR
       conditions:
@@ -147,4 +147,4 @@ alertPolicies:
           displayName: 'database is not up'
       notificationChannels:
         - "Sir Mix-a-Lot"
-      enabled: false
+      enabled: true
