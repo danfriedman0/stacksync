@@ -147,4 +147,4 @@ alertPolicies:
           displayName: 'database is not up'
       notificationChannels:
         - "Sir Mix-a-Lot"
-      enabled: true
+      enabled: false
