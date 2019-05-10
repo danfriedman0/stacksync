@@ -47,7 +47,7 @@ alertPolicies:
           displayName: 'GAE Application - Response count (filtered)'
       notificationChannels:
         - 'Dan'
-      enabled: true
+      enabled: false
     - displayName: 'KaibaCorp DuelTek not responding'
       combiner: OR
       conditions:
@@ -75,7 +75,7 @@ alertPolicies:
           displayName: 'CreateCard not responding'
       notificationChannels:
         - 'Syed'
-      enabled: true
+      enabled: false
     - displayName: 'Phone Apocalypse'
       combiner: OR
       conditions:
