@@ -9,24 +9,27 @@
                 "dataSets": [
                   {
                     "timeSeriesFilter": {
-                      "filter": "metric.type=\"appengine.googleapis.com/http/server/response_count\" resource.type=gae_app",
-                      "minAlignmentPeriod": "60s",
-                      "perSeriesAligner": "ALIGN_RATE",
+                      "filter": "metric.type=\"appengine.googleapis.com/http/server/response_count\" resource.type=\"gae_app\"", 
+                      "minAlignmentPeriod": "60s", 
+                      "perSeriesAligner": "ALIGN_RATE", 
                       "unitOverride": "1"
                     }
                   }
-                ],
-                "timeshiftDuration": "0s",
-                "options": {},
-                "y1Axis": {"label": "y1Axis"}
-              },
+                ], 
+                "timeshiftDuration": "0s", 
+                "options": {}, 
+                "y1Axis": {
+                "label": "y1Axis"
+              }
+              }, 
               "title": "GAE Application - Response count"
             }
-          ],
+          ], 
           "columns": "2"
         }
-      },
-      "displayName": "Demo Dashboard",
+      }, 
+      "displayName": "Demo Dashboard", 
+      "name": "projects/stacksync/dashboards/9457575589895878791", 
       "revision": "1"
     },
     {
