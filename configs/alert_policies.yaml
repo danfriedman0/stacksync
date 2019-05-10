@@ -103,7 +103,7 @@ alertPolicies:
           displayName: 'HangUp not responding'
       notificationChannels:
         - "Keith"
-      enabled: true
+      enabled: false
     - displayName: 'Secret BitCoin Mining'
       combiner: OR
       conditions:
@@ -131,7 +131,7 @@ alertPolicies:
           displayName: 'Transact happened twice'
       notificationChannels:
         - "Abhay"
-      enabled: true
+      enabled: false
     - displayName: 'CloudSQL is down'
       combiner: OR
       conditions:
@@ -147,4 +147,4 @@ alertPolicies:
           displayName: 'database is not up'
       notificationChannels:
         - "Sir Mix-a-Lot"
-      enabled: true
+      enabled: false
