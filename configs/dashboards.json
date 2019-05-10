@@ -28,6 +28,39 @@
       },
       "displayName": "Demo Dashboard",
       "revision": "1"
+    },
+    {
+      "root": {
+        "gridLayout": {
+          "widgets": [
+            {
+              "xyChart": {
+                "dataSets": [
+                  {
+                    "timeSeriesFilter": {
+                      "filter": "resource.type=api resource.labels.service=kaibacorp.googleapis.com metric.type=\"serviceruntime.googleapis.com/api/request_count\" metric.labels.response_code>=300",
+                      "minAlignmentPeriod": "3600s",
+                      "perSeriesAligner": "ALIGN_RATE",
+                      "crossSeriesReducer": "REDUCE_SUM",
+                      "groupByFields": ["resource.labels.method"],
+                      "unitOverride": "1"
+                    }
+                  }
+                ],
+                "timeshiftDuration": "0s",
+                "options": {},
+                "y1Axis": {
+                "label": "y1Axis"
+              }
+              },
+              "title": "GAE Application - Response count"
+            }
+          ],
+          "columns": "2"
+        }
+      },
+      "displayName": "KaibaCorp DuelTek",
+      "revision": "1"
     }
   ]
 }
