@@ -35,7 +35,7 @@ alertPolicies:
       combiner: OR
       conditions:
         - conditionThreshold:
-            filter: 'metric.type="appengine.googleapis.com/http/server/response_count" resource.type=gae_app metric.label.response_code>=300'
+            filter: 'metric.type="appengine.googleapis.com/http/server/response_count" resource.type=gae_app metric.label.response_code!=starts_with(2)'
             comparison: COMPARISON_GT
             thresholdValue: 100
             duration: 60s
@@ -52,7 +52,7 @@ alertPolicies:
       combiner: OR
       conditions:
         - conditionThreshold:
-            filter: 'resource.type=api resource.labels.service="kaibacorp.googleapis.com" resource.labels.method="DuelTek.GetCard" metric.type="serviceruntime.googleapis.com/api/request_count" metric.label.response_code>=300'
+            filter: 'resource.type=api resource.labels.service="kaibacorp.googleapis.com" resource.labels.method="DuelTek.GetCard" metric.type="serviceruntime.googleapis.com/api/request_count" metric.label.response_code!=starts_with(2)'
             comparison: COMPARISON_GT
             thresholdValue: 1
             duration: 60s
@@ -63,7 +63,7 @@ alertPolicies:
                 perSeriesAligner: ALIGN_RATE
           displayName: 'GetCard not responding'
         - conditionThreshold:
-            filter: 'resource.type=api resource.labels.service="kaibacorp.googleapis.com" resource.labels.method="DuelTek.CreateCard" metric.type="serviceruntime.googleapis.com/api/request_count" metric.label.response_code>=300'
+            filter: 'resource.type=api resource.labels.service="kaibacorp.googleapis.com" resource.labels.method="DuelTek.CreateCard" metric.type="serviceruntime.googleapis.com/api/request_count" metric.label.response_code!=starts_with(2)'
             comparison: COMPARISON_GT
             thresholdValue: 1
             duration: 60s
@@ -80,7 +80,7 @@ alertPolicies:
       combiner: OR
       conditions:
         - conditionThreshold:
-            filter: 'resource.type=api resource.labels.service="phone.googleapis.com" resource.labels.method="Phone.Call" metric.type="serviceruntime.googleapis.com/api/request_count" metric.label.response_code>=300'
+            filter: 'resource.type=api resource.labels.service="phone.googleapis.com" resource.labels.method="Phone.Call" metric.type="serviceruntime.googleapis.com/api/request_count" metric.label.response_code!=starts_with(2)'
             comparison: COMPARISON_GT
             thresholdValue: 1
             duration: 60s
@@ -91,7 +91,7 @@ alertPolicies:
                 perSeriesAligner: ALIGN_RATE
           displayName: 'Call not responding'
         - conditionThreshold:
-            filter: 'resource.type=api resource.labels.service="phone.googleapis.com" resource.labels.method="Phone.HangUp" metric.type="serviceruntime.googleapis.com/api/request_count" metric.label.response_code>=300'
+            filter: 'resource.type=api resource.labels.service="phone.googleapis.com" resource.labels.method="Phone.HangUp" metric.type="serviceruntime.googleapis.com/api/request_count" metric.label.response_code!=starts_with(2)'
             comparison: COMPARISON_GT
             thresholdValue: 1
             duration: 60s
