@@ -46,7 +46,7 @@ alertPolicies:
                 perSeriesAligner: ALIGN_RATE
           displayName: 'GAE Application - Response count (filtered)'
       notificationChannels:
-        - "Dan"
+        - 'Dan'
       enabled: false
     - displayName: 'KaibaCorp DuelTek not responding'
       combiner: OR
@@ -74,5 +74,33 @@ alertPolicies:
                 perSeriesAligner: ALIGN_RATE
           displayName: 'CreateCard not responding'
       notificationChannels:
-        - "Dan"
+        - 'Syed'
+      enabled: false
+    - displayName: 'Phone Apocalypse'
+      combiner: OR
+      conditions:
+        - conditionThreshold:
+            filter: 'resource.type=api resource.labels.service=phone.googleapis.com resource.labels.method=Phone.Call metric.type="serviceruntime.googleapis.com/api/request_count" metric.label.response_code>=300'
+            comparison: COMPARISON_GT
+            thresholdValue: 1
+            duration: 60s
+            trigger:
+              count: 1
+            aggregations:
+              - alignmentPeriod: 3600s
+                perSeriesAligner: ALIGN_RATE
+          displayName: 'Call not responding'
+        - conditionThreshold:
+            filter: 'resource.type=api resource.labels.service=phone.googleapis.com resource.labels.method=Phone.HangUp metric.type="serviceruntime.googleapis.com/api/request_count" metric.label.response_code>=300'
+            comparison: COMPARISON_GT
+            thresholdValue: 1
+            duration: 60s
+            trigger:
+              count: 1
+            aggregations:
+              - alignmentPeriod: 3600s
+                perSeriesAligner: ALIGN_RATE
+          displayName: 'HangUp not responding'
+      notificationChannels:
+        - "Keith"
       enabled: false
