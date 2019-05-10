@@ -20,7 +20,7 @@ notificationChannels:
       labels:
           email_address: "kjordy@google.com"
     - type: "email"
-      enabled: false
+      enabled: true
       displayName: "Abhay"
       labels:
           email_address: "akm@google.com"
