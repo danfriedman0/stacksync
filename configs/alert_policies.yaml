@@ -52,7 +52,7 @@ alertPolicies:
       combiner: OR
       conditions:
         - conditionThreshold:
-            filter: 'resource.type=api resource.labels.service="kaibacorp.googleapis.com" resource.labels.method=DuelTek.GetCard metric.type="serviceruntime.googleapis.com/api/request_count" metric.label."response_code">="300"'
+            filter: 'resource.type=api resource.labels.service="kaibacorp.googleapis.com" resource.labels.method=DuelTek.GetCard metric.type="serviceruntime.googleapis.com/api/request_count" metric.label.response_code>=300'
             comparison: COMPARISON_GT
             thresholdValue: 1
             duration: 60s
