@@ -38,7 +38,7 @@
                 "dataSets": [
                   {
                     "timeSeriesFilter": {
-                      "filter": "resource.type=api resource.labels.service=kaibacorp.googleapis.com metric.type=\"serviceruntime.googleapis.com/api/request_count\" metric.labels.response_code>=300",
+                      "filter": "resource.type=api resource.labels.service=\"kaibacorp.googleapis.com\" metric.type=\"serviceruntime.googleapis.com/api/request_count\" metric.labels.response_code!=starts_with(2)",
                       "minAlignmentPeriod": "3600s",
                       "perSeriesAligner": "ALIGN_RATE",
                       "crossSeriesReducer": "REDUCE_SUM",
@@ -60,7 +60,7 @@
                 "dataSets": [
                   {
                     "timeSeriesFilter": {
-                      "filter": "resource.type=api resource.labels.service=phone.googleapis.com metric.type=\"serviceruntime.googleapis.com/api/request_count\" metric.labels.response_code>=300",
+                      "filter": "resource.type=api resource.labels.service=\"phone.googleapis.com\" metric.type=\"serviceruntime.googleapis.com/api/request_count\" metric.labels.response_code!=starts_with(2)",
                       "minAlignmentPeriod": "3600s",
                       "perSeriesAligner": "ALIGN_RATE",
                       "crossSeriesReducer": "REDUCE_SUM",
@@ -82,7 +82,7 @@
                 "dataSets": [
                   {
                     "timeSeriesFilter": {
-                      "filter": "resource.type=api resource.labels.service=bitcoin.googleapis.com metric.type=\"serviceruntime.googleapis.com/api/request_count\" metric.labels.response_code>=300",
+                      "filter": "resource.type=api resource.labels.service=\"bitcoin.googleapis.com\" metric.type=\"serviceruntime.googleapis.com/api/request_count\" metric.labels.response_code!=starts_with(2)",
                       "minAlignmentPeriod": "3600s",
                       "perSeriesAligner": "ALIGN_RATE",
                       "crossSeriesReducer": "REDUCE_SUM",
